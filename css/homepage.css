@@ -1,0 +1,68 @@
+/*Header section*/
+
+.navbar {
+    background-color: rgb(28, 116, 116);
+}
+
+.navlink {
+    color: rgb(255, 153, 0);
+}
+
+
+.banner {
+    background-image: url("images/bacground.jpg");
+    background-size: contain;
+    background-position: center;
+    height: inherit;
+    margin-top: 65px;
+}
+
+#login {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.banner .marquee p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    margin-top: 10px;
+    color: rgb(0, 238, 255);
+    text-shadow: 1px 1px 2px rgb(191, 225, 16), 0 0 25px rgb(65, 128, 46), 0 0 5px rgb(213, 118, 29);
+}
+
+
+.marquee {
+    direction: ltr;
+
+    background-color: none;
+    color: whitesmoke;
+    height: 100%;
+    font-size: larger;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /*align-items: center;*/
+}
+
+footer {
+
+    float: center;
+    height: auto;
+}
+
+footer p {
+    font-family: fantasy;
+    font-size: 30px;
+    margin-top: 20px;
+    color: chartreuse;
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(121, 243, 84), 0 0 5px rgb(24, 238, 120);
+}
+
+
+
+footer button {
+    border-radius: 12px;
+    border: 1px solid #4CAF50;
+    width: 100%;
+    transform: translateY(4px);
+    box-shadow: 0 12px 16px 0 rgba(188, 19, 19, 0.889), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
