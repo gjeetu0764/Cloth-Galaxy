@@ -16,101 +16,90 @@
 </head>
 
 <body>
-
-    <div class="wrapper">
-        <!--Signin section-->
-        <div class="form-wrapper sign-in">
-            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
-            <form action="">
-                <h2>Login</h2>
-                <div class="input-group">
-                    <input type="text" required>
-                    <label for="username">Username</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" required>
-                    <label for="password">password</label>
-                </div>
-                <div class="remember">
-                    <label><input type="checkbox">Remember Me</label>
-                </div>
-                <button type="submit" class="btn"> Login </button>
-                <div class="sign-link">
-                    <p>Don't Have an account?<a class="signUp-link" href="#">SignUp</a></p>
-                </div>
-            </form>
-        </div>
+    <div class="wrapper ">
 
         <!--Sign up section-->
-        <div class="form-wrapper sign-up">
-            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
-            <form action="">
-                <h2>SignUp</h2>
-                <div class="input-group">
-                    <input type="text" required>
-                    <label for="username">Username</label>
-                </div>
-                <div class="input-group">
-                    <input type="email" required>
-                    <label for="email">Email</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" required>
-                    <label for="password">password</label>
-                </div>
-                <div class="remember">
-                    <label><input type="checkbox">I agree to the terms and condition.</label>
-                </div>
-                <button type="submit" class="btn"> SignUp </button>
-                <div class="sign-link">
+        <div class="form-wrapper">
 
-                    <p>Already Have an account?<a class="signIn-link" href="login.html">Sign In</a></p>
+
+            <form action="" style="border:1px solid #ccc" id="signup">
+                <a href="#login" class="close" onclick="change()"><i class="fa-solid fa-xmark">X</i></a>
+                <div class="container">
+                    <h1>SignUp</h1>
+                    <p>Please fill in this form to create an account.</p>
+                    <hr>
+                    <div class="input-group">
+                        <input type="text" required>
+                        <label for="username"><b>Username</b></label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="email" required>
+                        <label for="email"><b>Email</b></label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="psw" required>
+                        <label for="password"><b>password</b></label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="psw-repeat" required>
+                        <label for="password"><b>Repeat password</b></label>
+                    </div>
+                    <div class="remember">
+                        <label><input type="checkbox" checked="checked" name="remember"> I
+                            agree to the <a href="#" style="color:dodgerblue">terms and condition.</a></label>
+                    </div>
+                    <div class="input-group">
+                        <button type="button" class="cancelbtn">Cancel</button>
+                        <button type="submit" class="btn"> SignUp </button>
+                    </div>
+
+                    <p>Already Have an account?<a href="#login" onclick="change()">Sign In</a></p>
+
                 </div>
             </form>
         </div>
 
-        <div class="bg"></div>
-        <span style="--i:10;"></span>
-        <span style="--i:9;"></span>
-        <span style="--i:8;"></span>
-        <span style="--i:7;"></span>
-        <span style="--i:6;"></span>
-        <span style="--i:5;"></span>
-        <span style="--i:4;"></span>
-        <span style="--i:3;"></span>
-        <span style="--i:2;"></span>
-        <span style="--i:1;"></span>
+        <!--Signin section-->
+        <div id="sign">
+            <form action="" style="border:1px solid #ccc" id="login">
+                <a href="#signup" class="close" onclick="rechange()"><i class="fa-solid fa-xmark">X</i></a>
+                <div class="container">
+                    <h1>Login</h1>
+                    <hr>
+                    <div class="input-group">
+                        <input type="text" required>
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" required>
+                        <label for="password">password</label>
+                    </div>
+                    <div class="remember">
+                        <label><input type="checkbox" name="remember"> Remember Me</label>
+                    </div>
+                    <div class="input-group">
+                        <button type="submit" class="btn"> Login </button>
+                    </div>
+                    <p>Don't Have an account?<a href="#signup" onclick="rechange()">SignUp</a></p>
+                </div>
+            </form>
+        </div>
+
     </div>
-
     <script>
-        const wrapper = document.querySelector('.wrapper');
-        const signUpLink = document.querySelector('.signUp-link');
-        const signInLink = document.querySelector('.signIn-link');
-        const toggleLogin = document.querySelector('.toggle-login');
-        const close = document.querySelector('.close');
+        let signlink = document.getElementById('sign');
+        let signuplink = document.getElementsByClassName('form-wrapper');
+        function change() {
+            signlink.style.zIndex = 1;
+            signuplink.style.zIndex = -1;
 
-        signUpLink.addEventListener('click', () => {
-            wrapper.classList.toggle('.show-sign');
-            wrapper.classList.add('.show-bg');
-        });
+        }
+        function rechange(params) {
+            signlink.style.zIndex = -1;
+            signuplink.style.zIndex = 1;
+        }
 
-        signInLink.addEventListener('click', () => {
-            wrapper.classList.toggle('.show-sign');
-            wrapper.classList.add('.show-bg');
-        });
-
-        toggleLogin.addEventListener('click', () => {
-            wrapper.classList.toggle('.active');
-            toggleLogin.classList.toggle('.active');
-        });
-
-        close.addEventListener('click', () => {
-            toggleLogin.classList.toggle('active');
-            wrapper.classList.toggle('.active');
-            wrapper.classList.remove('.show-bg');
-        });
     </script>
-
 </body>
 
 </html>
